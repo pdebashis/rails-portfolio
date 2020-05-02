@@ -1,5 +1,5 @@
 # This migration comes from portfolio (originally 20151125151535)
-class CreatePortfolioSiteItemTagsItems < ActiveRecord::Migration
+class CreatePortfolioSiteItemTagsItems < ActiveRecord::Migration[6.0]
   def change
     create_table :portfolio_site_item_tags_items, id: false do |t|
       t.references :site_item, index: true

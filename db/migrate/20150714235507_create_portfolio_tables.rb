@@ -1,4 +1,4 @@
-class CreatePortfolioTables < ActiveRecord::Migration
+class CreatePortfolioTables < ActiveRecord::Migration[6.0]
   def change
     create_table :portfolio_sites do |t|
       t.string :key, null: false, index: true
