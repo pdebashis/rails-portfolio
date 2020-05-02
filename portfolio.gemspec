@@ -17,16 +17,18 @@ Gem::Specification.new do |s|
   s.files       = `git ls-files`.split("\n")
   s.test_files  = `git ls-files -- spec/*`.split("\n")
 
-  s.add_dependency 'rails', '~> 4.2'
-  s.add_dependency 'devise', '~> 3.5'
-  s.add_dependency 'paperclip', '~> 4.3'
-  s.add_dependency 'redcarpet', '~> 3.3'
-  s.add_dependency 'bootstrap-sass', '~> 3.3'
+  s.add_dependency 'rails', '~> 6.0'
+  s.add_dependency 'devise', '~> 4.7'
+  s.add_dependency 'paperclip', '~> 6.1'
+  s.add_dependency 'redcarpet', '~> 3.5'
+  s.add_dependency 'bootstrap-sass', '~> 3.4'
   s.add_dependency 'bootstrap-sass-extras', '~> 0.0'
-  s.add_dependency 'jquery-rails', '~> 4.0'
+  s.add_dependency 'jquery-rails', '~> 4.3'
+  s.add_dependency 'sprockets', '~> 4.0'
 
+  s.add_development_dependency 'rdoc'
   s.add_development_dependency 'sqlite3', '~> 1.3'
-  s.add_development_dependency 'rspec-rails', '~> 3.0'
+  s.add_development_dependency 'rspec-rails', '~> 4.0'
   s.add_development_dependency 'factory_girl_rails', '~> 4.5'
   s.add_development_dependency 'faker', '~> 1.5'
   s.add_development_dependency 'simplecov', '~> 0.11'
