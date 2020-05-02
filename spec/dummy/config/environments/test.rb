@@ -39,4 +39,8 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  #opt-out of checking for pending migrations
+  #described in rspec upgrade guide
+  config.active_record.maintain_test_schema = false
 end
