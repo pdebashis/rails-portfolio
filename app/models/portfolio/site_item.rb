@@ -21,7 +21,7 @@ module Portfolio
     end
 
     def path_title
-      title.parameterize('-')
+      title.parameterize
     end
 
     def default_image
