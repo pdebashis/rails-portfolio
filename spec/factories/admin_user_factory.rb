@@ -1,8 +1,8 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :admin_user, class: Portfolio::AdminUser do
-    pass = Faker::Internet.password
-    email Faker::Internet.email
-    password pass
+    pass = FFaker::Internet.password
+    email { FFaker::Internet.email } 
+    password { pass }
 
     before(:validation) do |user|
       user.password_confirmation = pass

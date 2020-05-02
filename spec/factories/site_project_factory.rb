@@ -1,6 +1,6 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :site_project, class: Portfolio::SiteProject do
-    title { Faker::Commerce.product_name }
+    title { FFaker::Company.name }
     site
 
     factory :site_project_with_category do

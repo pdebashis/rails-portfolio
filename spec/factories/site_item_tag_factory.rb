@@ -1,5 +1,5 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :site_item_tag, class: Portfolio::SiteItemTag do
-    name { Faker::Lorem.word }
+    name { FFaker::Lorem.word }
   end
 end

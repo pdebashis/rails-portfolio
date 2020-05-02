@@ -29,7 +29,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'rdoc'
   s.add_development_dependency 'sqlite3', '~> 1.3'
   s.add_development_dependency 'rspec-rails', '~> 4.0'
-  s.add_development_dependency 'factory_girl_rails', '~> 4.5'
-  s.add_development_dependency 'faker', '~> 1.5'
+  s.add_development_dependency 'factory_bot_rails', '~> 5.2'
+  s.add_development_dependency 'ffaker', '~> 2.14'
   s.add_development_dependency 'simplecov', '~> 0.11'
 end

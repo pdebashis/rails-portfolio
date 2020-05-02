@@ -1,10 +1,10 @@
 module Portfolio
-  FactoryGirl.define do
+  FactoryBot.define do
     factory :site, class: Portfolio::Site do
-      person_name { Faker::Name.name }
-      job_title   { Faker::Name.title }
-      greetings   { Faker::Lorem.sentence }
-      summary     { Faker::Lorem.paragraph }
+      person_name { FFaker::Name.name }
+      job_title   { FFaker::Job.title }
+      greetings   { FFaker::Lorem.sentence }
+      summary     { FFaker::Lorem.paragraph }
 
       factory :site_with_projects do
         after :create do |site, evaluator|
