@@ -25,13 +25,13 @@ module Portfolio
 
         describe 'GET edit' do
           let(:record) { create :site }
-          before { get :edit, id: record.id }
+          before { get :edit, params: {id: record.id} }
           it { expect(response).to render_template('edit') }
         end
 
         describe 'POST create' do
-          before { get :create, site: {
-            person_name: 'ed', job_title: 'senior rails dev' } }
+          before { get :create, params: {site: {
+            person_name: 'ed', job_title: 'senior rails dev' }} }
 
           it {
             expect(response).to redirect_to(
@@ -42,7 +42,7 @@ module Portfolio
 
         describe "PUT update" do
           let(:site) { create :site }
-          before { put :update, id: site.id, site: { person_name: 'ed2' } }
+          before { put :update, params: {id: site.id, site: { person_name: 'ed2' }} }
 
           it {
             expect(response).to redirect_to(
@@ -54,7 +54,7 @@ module Portfolio
 
         describe "DELETE destroy" do
           let(:site) { create :site }
-          before { delete :destroy, id: site.id }
+          before { delete :destroy, params: {id: site.id} }
 
           it { expect(response).to redirect_to([:admin, :sites]) }
           it { expect(Site.find_by_id(site.id)).to be nil }

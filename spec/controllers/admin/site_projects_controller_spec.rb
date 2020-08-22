@@ -15,14 +15,14 @@ module Portfolio
 
         describe 'GET index' do
           let(:site) { create :site }
-          before { get :index, site_id: site.id }
+          before { get :index, params: { site_id: site.id}  }
 
           it { expect(response).to render_template('index') }
         end
 
         describe 'GET new' do
           let(:site) { create :site }
-          before { get :new, site_id: site.id }
+          before { get :new, params: {site_id: site.id} }
 
           it { expect(response).to render_template('new') }
         end
@@ -30,7 +30,7 @@ module Portfolio
         describe 'GET edit' do
           let(:site) { create :site }
           let(:item) { create(:site_project, site: site) }
-          before { get :edit, site_id: site.id, id: item.id }
+          before { get :edit, params: {site_id: site.id, id: item.id} }
 
           it { expect(response).to render_template('edit') }
         end
@@ -38,7 +38,7 @@ module Portfolio
         describe 'POST create' do
           let(:site) { create :site }
           before {
-            post :create, site_id: site.id, site_project: { title: 'proj1' }
+            post :create, params: {site_id: site.id, site_project: { title: 'proj1' }}
           }
 
           it {
@@ -53,8 +53,8 @@ module Portfolio
           let(:item) { create(:site_project, site: site) }
 
           before do
-            put :update, site_id: site.id, id: item.id,
-                site_project: { title: 'new title' }
+            put :update, params: {site_id: site.id, id: item.id,
+                site_project: { title: 'new title' }}
           end
 
           it {
@@ -69,7 +69,7 @@ module Portfolio
           let(:site) { create :site }
           let(:item) { create(:site_project, site: site) }
 
-          before { delete :destroy, site_id: site.id, id: item.id }
+          before { delete :destroy, params: {site_id: site.id, id: item.id} }
 
           it {
             expect(response).to redirect_to(admin_site_site_projects_path)
